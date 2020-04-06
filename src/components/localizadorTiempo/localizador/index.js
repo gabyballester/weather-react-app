@@ -1,4 +1,5 @@
 import React, { Component } from 'react'; //importaciones básicas
+import './localizador.css'; //importamos archivo css
 
 //Cremaos clase que extiende de Component
 class Localizador extends Component {
@@ -11,7 +12,7 @@ class Localizador extends Component {
     render() {
         const { ciudad } = this.props; //almacenará la propiedad cuyo nombre sea ciudad
         return (
-            <div><h1>Ciudad: {ciudad}</h1></div> //para mostrar la ciudad la bindeo
+            <div id="localizador"><h1>Ciudad: {ciudad}</h1></div> //para mostrar la ciudad la bindeo
         )
     }
 }
