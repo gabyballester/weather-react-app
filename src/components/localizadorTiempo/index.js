@@ -1,5 +1,6 @@
 import React, { Component } from 'react'; //Importamos react
 import Localizador from './localizador';
+import DatosTiempo from './datosTiempo';
 /** Si no es un componente podemos escribirlo en camelCase
  * importamos el servicio */
 import serviceApi from '../../services/serviceApi';
@@ -14,15 +15,15 @@ class LocalizadorTiempo extends Component {
         let data =  serviceApi.getData();
         console.log('consoleamos data');
         console.log(data);
-
     }
 
     render() {
         return (
             <div>
-                <h2>Es el componente localizador tiempo</h2>
+                <h2>Componente localizador tiempo</h2>
                 {/* De este modo paso por propery ciudad la location */}
                 <Localizador ciudad={location} />
+                <DatosTiempo/>
             </div>
         )
     }
