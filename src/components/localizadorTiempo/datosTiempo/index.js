@@ -2,6 +2,7 @@
 import React, { Component } from 'react'; //Importamos react
 import IconoTiempo from './iconoTiempo/index';
 
+
 class DatosTiempo extends Component {
     /** Para poder pasar properties, hay que hacerlo por el constructor,*/
     constructor(...props) { //le pasamos el array de los properties
