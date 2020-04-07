@@ -1,23 +1,23 @@
 //Importaciones básicas
 import React, { Component } from 'react'; //Importamos react
-import IconoTiempo from './iconoTiempo/index';
 
-class DatosTiempo extends Component {
+class IconoTiempo extends Component {
     /** Para poder pasar properties, hay que hacerlo por el constructor,*/
     constructor(...props) { //le pasamos el array de los properties
         super(...props); //hacemos un super y le pasamos directamente el array
         //Esto nos permite pasar tantas properties como queramos
     }
     render() {
-        const { datos } = this.props; //recojo datos de la prop
+        // console.log("props-> " + JSON.stringify(this.props));
+        let icono = this.props; //guardo la propiedad icono     
+        console.log(icono);
+        
         return (
-            <div id="datosTiepmo">
-                <h1>Datos tiempo</h1>
-                {/* Le paso del array datos, el objeto weather */}
-                <IconoTiempo icono={datos.weather} />
+            <div id="iconoTiepmo">
+                <h1>Icono del tiempo</h1>
             </div>
         )
     }
 }
 
-export default DatosTiempo;
+export default IconoTiempo;
