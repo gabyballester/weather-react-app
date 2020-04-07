@@ -2,8 +2,8 @@
 import React, { Component } from 'react'; //Importamos react
 import WeatherIcons from 'react-weathericons';
 
-const EstadoTiempo = estadoTiempo =>{
-    switch(estadoTiempo){
+const EstadoTiempo = estadoTiempo => {
+    switch (estadoTiempo) {
         case "nublado": return "cloud";
         case "soleado": return "day-sunny";
         case "lluvioso": return "rain";
@@ -19,14 +19,14 @@ class IconoTiempo extends Component {
     }
 
     render() {
-        let {icono} = this.props; //guardo la propiedad icono que envía el padre    
-        let estado = "soleado";      
+        let { icono } = this.props; //guardo la propiedad icono que envía el padre    
+        let estado = "soleado";
 
         return (
             // El componente recibe la constante estado y le pasamos estado para mostrar
             <div><WeatherIcons name={EstadoTiempo(estado)}
-            size="2x"></WeatherIcons></div>
-        ) 
+                size="2x"></WeatherIcons></div>
+        )
     }
 }
 
