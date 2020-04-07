@@ -10,11 +10,16 @@ class DatosTemperatura extends Component {
 
     render() {
         const { temperatura } = this.props; //guardo propiedad temperatura que envía el padre
-
+        const { viento } = this.props; //recogemos el viento
+        const { humedad } = this.props; //Guardamos la prop humedad que llega del padre
         return (
             <div>
                 {/* como recibe por las props la temperatura directamente, la muestra */}
                 <h1>{`${temperatura} ºC`}</h1>
+                <div>
+                    <span>Humedad {humedad}% | </span>
+                    <span>Vel. Viento {viento} km/h </span>
+                </div>
             </div>
         )
     }

@@ -12,26 +12,38 @@ class DatosTiempo extends Component {
     }
 
     calcularTemperatura(temperatura) {
-         // Esto retornará temperatura cuando sea llamado
+        // Esto retornará temperatura cuando sea llamado
         return Conversor(temperatura)
-        .from('K') //origin de datos en unidades Kelvin
-        .to('C') //Unidades destino
-        .toString() //Lo paso a string
-        .substring(0,5); //Recorto dicho string
+            .from('K') //origin de datos en unidades Kelvin
+            .to('C') //Unidades destino
+            .toString() //Lo paso a string
+            .substring(0, 5); //Recorto dicho string
+    }
+
+    calcularViento(viento) {
+        return Conversor(viento).from('m/s').to('km/h');
     }
 
     render() {
         const { datos } = this.props; //recojo array de objetos de la prop
-        const TempBase = 24;
+        const TempBase = 24; //constante con temperatura mínima
+        const VientoBase = 5; //constante con viento mínimo
+        const HumedadBase = 50; //constante con humedad base
         return (
             <div id="datosTiepmo">
                 <h1>Datos tiempo</h1>
                 {/* Le paso del array datos, el objeto weather */}
                 <IconoTiempo icono={datos} />
-                <DatosTemperatura temperatura={
-                    datos.main ? this.calcularTemperatura(datos.main.temp) : TempBase
-                    // El método retorna temperatura
-                } />
+                <DatosTemperatura //inyectamos componente
+                    temperatura={ //pasamos temperatura
+                        datos.main ? this.calcularTemperatura(datos.main.temp) : TempBase
+                    }
+                    //pasamos el viento al elemento hijo
+                    viento={datos.wind ? this.calcularViento(datos.wind.speed) : VientoBase}
+                    humedad={
+                        datos.main ? datos.main.humidity : HumedadBase
+                    }
+                />
             </div>
         )
     }
