@@ -1,4 +1,4 @@
-### Weather App ☁️
+### Weather React App ☁️
 Aplicación que muestra el tiempo actual
 #### Tecnologías: 📌
 React + class components
